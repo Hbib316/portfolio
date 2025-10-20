@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habib Saadallah | Formation</title>
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* ==== Modern Education Timeline ==== */
+    .education-timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 3rem;
+      border-left: 3px solid rgba(0, 217, 255, 0.4);
+      padding-left: 2rem;
+    }
+
+    .education-item {
+      position: relative;
+      background: rgba(26, 26, 46, 0.85);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -1.45rem;
+      top: 2rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #00d9ff;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+    }
+
+    .education-item:hover {
+      transform: translateY(-6px);
+      border-color: #00d9ff;
+      box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
+    }
+
+    .education-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .education-header h3 {
+      color: #00d9ff;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .education-header .edu-date {
+      font-size: 0.95rem;
+      color: #bbb;
+      font-weight: 400;
+    }
+
+    .education-subtitle {
+      color: #b0b0b0;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .education-item ul {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    .education-item p {
+      color: #d0d0d0;
+    }
+
+    /* ==== Responsive ==== */
+    @media (max-width: 768px) {
+      .education-timeline {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .education-item::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">HS</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="education.html" class="active">Formation</a></li>
+        <li><a href="experience.html">Expérience</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="events.html">Événements</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Background -->
+  <div id="particles-js"></div>
+
+  <!-- Education Section -->
+  <section class="section">
+    <div class="content-container">
+      <h2 class="section-title">
+        <i class="fas fa-graduation-cap"></i> Mon <span class="highlight">Parcours</span> Académique
+      </h2>
+
+      <div class="education-timeline">
+
+        <!-- ENISO -->
+        <div class="education-item">
+          <div class="education-header">
+            <h3><i class="fas fa-university"></i> École Nationale d'Ingénieurs de Sousse (ENISO)</h3>
+            <span class="edu-date"><i class="far fa-calendar-alt"></i> 2023 – 2026</span>
+          </div>
+          <p class="education-subtitle">Diplôme d’ingénieur en Électronique Industrielle</p>
+          <p><strong>Spécialisation :</strong> Contrôle industrielle et énergies renouvelables.</p>
+          
+        </div>
+
+        <!-- IPEIK -->
+        <div class="education-item">
+          <div class="education-header">
+            <h3><i class="fas fa-school"></i> Institut Préparatoire de Kairouan (IPEIK)</h3>
+            <span class="edu-date"><i class="far fa-calendar-alt"></i> 2021 – 2023</span>
+          </div>
+          <p class="education-subtitle">Cycle Préparatoire Math-Physique</p>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <h2 class="section-title" style="margin-top:4rem;">
+        <i class="fas fa-tools"></i> Compétences <span class="highlight">Techniques</span>
+      </h2>
+
+      <div class="card-container">
+        <!-- Programming -->
+        <div class="card">
+          <div class="card-title"><i class="fas fa-code"></i> Programmation</div>
+          <div class="card-description">
+            <div class="skills-preview" style="justify-content:flex-start; margin-top:1rem;">
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">C/C++</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">Flask</span>
+              <span class="skill-badge">HTML/CSS</span>
+              <span class="skill-badge">SQLite</span>
+              <span class="skill-badge">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design & Simulation -->
+        <div class="card">
+          <div class="card-title"><i class="fas fa-drafting-compass"></i> Conception & Simulation</div>
+          <div class="card-description">
+            <div class="skills-preview" style="justify-content:flex-start; margin-top:1rem;">
+              <span class="skill-badge">MATLAB/Simulink</span>
+              <span class="skill-badge">LabVIEW</span>
+              <span class="skill-badge">Proteus</span>
+              <span class="skill-badge">KiCad</span>
+              <span class="skill-badge">TIA Portal</span>
+              <span class="skill-badge">LaTeX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="card">
+          <div class="card-title"><i class="fas fa-language"></i> Langues</div>
+          <div class="card-description">
+            <ul style="list-style:none; padding:0;">
+              <li><strong>🇹🇳 Arabe :</strong> Langue maternelle</li>
+              <li><strong>🇫🇷 Français :</strong> Expression claire et précise</li>
+              <li><strong>🇬🇧 Anglais :</strong> Niveau professionnel</li>
+              <li><strong>🇩🇪 Allemand :</strong> En apprentissage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
