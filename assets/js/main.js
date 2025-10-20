@@ -320,3 +320,15 @@ function initGalleryLightbox() {
 if (document.querySelector('.gallery-item')) {
     initGalleryLightbox();
 }
+// ========================================
+// Menu Burger Responsive
+// ========================================
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('open');
+    navLinks.classList.toggle('active');
+  });
+}
