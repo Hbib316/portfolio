@@ -193,61 +193,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.card, .education-item, .stat-card, .event-card');
     elements.forEach(el => observer.observe(el));
 });
-
 // ========================================
-// Video Player (Corrigé)
+// Video Player (Fully Fixed)
 // ========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('chatbotVideo');
-    const playBtn = document.getElementById('playButton');
+document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll("video");
+  const overlays = document.querySelectorAll(".play-overlay");
 
-    if (video && playBtn) {
-        // Masquer le bouton play quand la vidéo démarre
-        video.addEventListener('play', () => {
-            playBtn.classList.add('hidden');
-        });
+  // Function to pause all other videos
+  function pauseAllExcept(currentVideo) {
+    videos.forEach((vid) => {
+      if (vid !== currentVideo && !vid.paused) {
+        vid.pause();
+      }
+    });
+  }
 
-        // Afficher le bouton play quand la vidéo est en pause
-        video.addEventListener('pause', () => {
-            playBtn.classList.remove('hidden');
-        });
+  videos.forEach((video, index) => {
+    const overlay = overlays[index];
 
-        // Afficher le bouton play quand la vidéo se termine
-        video.addEventListener('ended', () => {
-            playBtn.classList.remove('hidden');
-        });
+    if (!overlay) return; // skip if no matching overlay
 
-        // Clic sur le bouton play
-        playBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (video.paused) {
-                video.play().catch(err => {
-                    console.error('Erreur de lecture:', err);
-                });
-            }
-        });
+    // When video starts playing
+    video.addEventListener("play", () => {
+      pauseAllExcept(video);
+      overlay.classList.add("hidden");
+    });
 
-        // Clic sur la vidéo pour play/pause
-        video.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
+    // When video is paused or ends
+    ["pause", "ended"].forEach((event) => {
+      video.addEventListener(event, () => {
+        overlay.classList.remove("hidden");
+      });
+    });
 
-        // Gestion des erreurs
-        video.addEventListener('error', (e) => {
-            console.error('Erreur vidéo:', e);
-            playBtn.classList.add('hidden');
-            const errorMsg = document.createElement('p');
-            errorMsg.style.color = '#ff6b6b';
-            errorMsg.style.textAlign = 'center';
-            errorMsg.style.padding = '2rem';
-            errorMsg.textContent = '⚠️ Vidéo non disponible. Vérifiez le chemin du fichier.';
-            video.parentElement.appendChild(errorMsg);
-        });
-    }
+    // Click overlay to play
+    overlay.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (video.paused) {
+        pauseAllExcept(video);
+        video.play().catch((err) => console.error("Video play error:", err));
+      }
+    });
+
+    // Click on video toggles play/pause
+    video.addEventListener("click", () => {
+      if (video.paused) {
+        pauseAllExcept(video);
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    // Handle errors gracefully
+    video.addEventListener("error", (e) => {
+      console.error("Video error:", e);
+      overlay.classList.add("hidden");
+      const errorMsg = document.createElement("p");
+      errorMsg.style.color = "#ff6b6b";
+      errorMsg.style.textAlign = "center";
+      errorMsg.style.padding = "1.5rem";
+      errorMsg.textContent = "⚠️ Video unavailable or file missing.";
+      video.parentElement.appendChild(errorMsg);
+    });
+  });
 });
 
 // ========================================

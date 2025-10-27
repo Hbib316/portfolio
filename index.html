@@ -1,91 +1,148 @@
 <!DOCTYPE html>
-<html lang="fr" light-mode="dark">
+<html lang="en" light-mode="dark">
 
 <head>
-    <title>Habib Saadallah | Accueil</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="habib saadallah, ingénieur électronique, IA, IoT, ENISO, portfolio" />
-    <meta name="description" content="Portfolio de Habib Saadallah - Étudiant ingénieur en Électronique Industrielle à l'ENISO, passionné par l'IA et l'IoT." />
-    
-    <meta property="og:title" content="Habib Saadallah | Portfolio">
-    <meta property="og:description" content="Étudiant ingénieur passionné par l'électronique, l'IA et l'IoT">
-    
-    <!-- External Libraries -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Habib Saadallah | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Habib Saadallah, electronics engineer, AI, IoT, ENISO, portfolio" />
+  <meta name="description" content="Portfolio of Habib Saadallah – Industrial Electronics Engineering Student at ENISO, passionate about AI, IoT, and automation." />
+
+  <meta property="og:title" content="Habib Saadallah | Portfolio">
+  <meta property="og:description" content="Industrial electronics engineering student passionate about embedded systems, AI, and IoT.">
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/img/favicon.ico">
+
+  <style>
+    /* ===== Custom Layout for Left-Aligned Profile Photo ===== */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      text-align: left;
+      gap: 3rem;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .profile-img {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<!-- Navigation -->
-<nav>
-  <div class="container">
-    <!-- Bouton Burger -->
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <!-- Burger Menu -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
 
-    <!-- Liens -->
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="education.html">Formation</a></li>
-      <li><a href="experience.html">Expérience</a></li>
-      <li><a href="projects.html">Projets</a></li>
-      <li><a href="events.html">Événements</a></li>
-    </ul>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="assets/img/profile.jpg" alt="Habib Saadallah" class="profile-img"
+      onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2280%22 fill=%22%2300d9ff%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3EHS%3C/text%3E%3C/svg%3E'">
+
+    <div class="hero-content">
+      <div>
+        <span class="wave">👋</span>
+        <h1>Hello, I'm <span class="highlight">Habib Saadallah</span></h1>
+      </div>
+
+      <!-- Professional tagline -->
+      <p class="hero-tagline">
+        Industrial Electronics Engineering Student @ ENISO<br>
+        Motivated and detail-oriented, passionate about emerging technologies. Skilled in developing innovative solutions in AI and IoT, with a focus on industrial control systems and renewable energy.
+      </p>
+
+      <!-- Social Buttons -->
+      <div class="social-links">
+        <a href="https://github.com/Hbib316" target="_blank" class="cta-button" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/habib-saadallah-669664260" target="_blank" class="cta-button" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:habibsaadallah2@gmail.com" class="cta-button" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+21622869802" class="cta-button" title="Phone">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+
+      <!-- CV Button -->
+      <a href="assets/cv.pdf" class="cta-button" download>
+        📄 Download My Resume
+      </a>
+    </div>
   </div>
-</nav>
 
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-content">
-            <div>
-                <span class="wave">👋</span>
-                <h1>Salut, je suis <span class="highlight">Habib Saadallah</span></h1>
-            </div>
-
-            <img src="assets/img/profile.jpg" alt="Habib Saadallah" class="profile-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Ccircle cx=%22100%22 cy=%22100%22 r=%2280%22 fill=%22%2300d9ff%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2260%22 font-family=%22Arial%22%3EHS%3C/text%3E%3C/svg%3E'">
-
-            <div class="typed-text">
-                <span id="typed"></span>
-            </div>
-
-            
-            
-            
-                <a href="https://github.com/Hbib316" target="_blank" class="cta-button" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/habib-saadallah-669664260" target="_blank" class="cta-button" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:habibsaadallah2@gmail.com" class="cta-button" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+21622869802" class="cta-button" title="Téléphone">
-                    <i class="fas fa-phone"></i>
-                </a>
-            
-
-            <a href="assets/cv.pdf" class="cta-button" download>
-                📄 Télécharger mon CV
-            </a>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="assets/js/main.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

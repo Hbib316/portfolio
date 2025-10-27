@@ -82,6 +82,48 @@ a:hover {
     transform: translateY(0);
   }
 }
+/* ========================================
+   Social Icons (GitHub, LinkedIn, Email, Phone)
+   ======================================== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.social-links .cta-button {
+  width: 45px;              /* smaller circular size */
+  height: 45px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.15);
+}
+
+.social-links .cta-button i {
+  font-size: 1.2rem;        /* smaller icon size */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links .cta-button:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.4);
+}
+
+.social-links .cta-button:hover i {
+  transform: scale(1.1);
+}
 
 /* ========================================
    Particles Background
@@ -570,7 +612,92 @@ body.light-mode .card:hover {
   color: var(--accent);
   margin-bottom: 1rem;
 }
+    /* ==== Modern Education Timeline ==== */
+    .education-timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 3rem;
+      border-left: 3px solid rgba(0, 217, 255, 0.4);
+      padding-left: 2rem;
+    }
 
+    .education-item {
+      position: relative;
+      background: rgba(26, 26, 46, 0.85);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -1.45rem;
+      top: 2rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #00d9ff;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+    }
+
+    .education-item:hover {
+      transform: translateY(-6px);
+      border-color: #00d9ff;
+      box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
+    }
+
+    .education-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .education-header h3 {
+      color: #00d9ff;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .education-header .edu-date {
+      font-size: 0.95rem;
+      color: #bbb;
+      font-weight: 400;
+    }
+
+    .education-subtitle {
+      color: #b0b0b0;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .education-item ul {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    .education-item p {
+      color: #d0d0d0;
+    }
+
+    /* ==== Responsive ==== */
+    @media (max-width: 768px) {
+      .education-timeline {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .education-item::before {
+        display: none;
+      }
+    }
 /* ========================================
    Event Cards
    ======================================== */
